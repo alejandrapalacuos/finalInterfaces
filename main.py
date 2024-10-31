@@ -1,8 +1,14 @@
 import streamlit as st
 
+# Variables para controlar el estado de las pantallas
+mostrar_garaje = False
+
 st.title("Bienvenido a HomeDrive")
 
 if st.button("Empezar"):
+    mostrar_garaje = True
+
+if mostrar_garaje:
     st.sidebar.title("Controles")
     
     # Pantalla de garaje
@@ -12,7 +18,7 @@ if st.button("Empezar"):
     if st.sidebar.button("Cerrar"):
         st.write("Garaje cerrado")
     
-    # Pantalla de luces
+    # Pantalla de luces (la agregamos aquí para que solo se muestre si el garaje está visible)
     st.sidebar.header("Luces")
     if st.sidebar.button("Encender"):
         st.write("Luces encendidas")
