@@ -1,5 +1,15 @@
 import streamlit as st
 
+# Define el estilo CSS para el fondo
+custom_css = """
+<style>
+body {
+    background-color: #FEFAE0;  /* Cambia el color aquí */
+    margin: 0;
+    padding: 0;
+}
+</style>
+"""
 
 def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
@@ -34,6 +44,9 @@ def pagina_luces():
         st.session_state.pagina_actual = "elegir_accion"
 
 def main():
+    # Inserta el estilo CSS al principio de la aplicación
+    st.markdown(custom_css, unsafe_allow_html=True)
+
     # Inicializa el estado de la sesión si no existe
     if 'pagina_actual' not in st.session_state:
         st.session_state.pagina_actual = 'inicio'
@@ -50,3 +63,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
