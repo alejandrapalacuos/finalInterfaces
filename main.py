@@ -20,7 +20,7 @@ def pagina_garaje():
         st.write("Garaje abierto")
     if st.button("Cerrar"):
         st.write("Garaje cerrado")
-    if st.button("Volver al inicio"):
+    if st.button("Volver"):
         st.session_state.pagina_actual = "elegir_accion"
 
 def pagina_luces():
@@ -29,8 +29,8 @@ def pagina_luces():
         st.write("Luces encendidas")
     if st.button("Apagar"):
         st.write("Luces apagadas")
-    if st.button("Volver al inicio"):
-        st.session_state.pagina_actual = "inicio"
+    if st.button("Volver"):
+        st.session_state.pagina_actual = "elegir_accion"
 
 def main():
     # Inicializa el estado de la sesión si no existe
