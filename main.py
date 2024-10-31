@@ -21,7 +21,7 @@ def pagina_garaje():
     if st.button("Cerrar"):
         st.write("Garaje cerrado")
     if st.button("Volver al inicio"):
-        st.session_state.pagina_actual = "inicio"
+        st.session_state.pagina_actual = "elegir_accion"
 
 def pagina_luces():
     st.title("Control de Luces")
