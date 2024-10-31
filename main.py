@@ -1,4 +1,6 @@
 import streamlit as st
+
+# Define el estilo CSS al principio
 custom_css = """
 <style>
 body {
@@ -8,12 +10,16 @@ body {
 """
 
 def main():
-    # Inserta el estilo CSS al principio de la aplicación
     st.markdown(custom_css, unsafe_allow_html=True)
 
     # Resto de tu código (páginas, botones, etc.)
 
+    # Por ejemplo:
+    st.title("Mi aplicación Streamlit")
+    st.write("Este es el contenido de mi aplicación.")
+
 if __name__ == "__main__":
+    main()
     main()
 def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
