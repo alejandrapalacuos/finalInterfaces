@@ -1,21 +1,21 @@
-import tensorflow as tf
-from tensorflow.keras.models import load_model
-import numpy as np
-from PIL import Image
+import streamlit as st
 
-# Cargar el modelo
-model = load_model('keras_model.h5')
+st.title("Bienvenido a HomeDrive")
 
-# Preparar una nueva imagen (ajustar el tamaño y preprocesamiento según tu modelo)
-img = Image.open('nueva_imagen.jpg')
-img = img.resize((224, 224))  # Suponiendo que el modelo espera imágenes de 224x224
-img_array = np.array(img) / 255.0  # Normalizar los valores de píxel
-img_array = np.expand_dims(img_array, axis=0)  # Agregar un eje para representar un batch
+if st.button("Empezar"):
+    st.sidebar.title("Controles")
+    
+    # Pantalla de garaje
+    st.sidebar.header("Garaje")
+    if st.sidebar.button("Abrir"):
+        st.write("Garaje abierto")
+    if st.sidebar.button("Cerrar"):
+        st.write("Garaje cerrado")
+    
+    # Pantalla de luces
+    st.sidebar.header("Luces")
+    if st.sidebar.button("Encender"):
+        st.write("Luces encendidas")
 
-# Realizar la predicción
-prediction = model.predict(img_array)
-
-# Obtener la clase predicha
-class_index = np.argmax(prediction)
-classes = ['gato', 'perro']  # Lista de clases
-print('Predicción:', classes[class_index])
+# Personalizar el diseño (ejemplo)
+st.write("<style>body {background-color: #f0f0f0;}</style>", unsafe_allow_html=True)
