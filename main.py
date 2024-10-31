@@ -1,5 +1,11 @@
 import streamlit as st
-
+custom_css = """
+<style>
+body {
+    background-color: #FEFAE0;
+}
+</style>
+"""
 def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
     if st.button("Empezar"):
