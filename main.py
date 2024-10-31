@@ -1,18 +1,21 @@
-import streamlit as st
-from modules import garage_control, gesture_recognition, voice_control
-from streamlit_webrtc import webrtc_streamer
-import threading
+import tensorflow as tf
+from tensorflow.keras.models import load_model
+import numpy as np
+from PIL import Image
 
-st.title("Automatización del Hogar")
+# Cargar el modelo
+model = load_model('keras_model.h5')
 
-# Botón para reconocimiento de gestos y abrir garaje
-if st.button("Abrir Garaje (Reconocimiento de Gestos)"):
-    threading.Thread(target=gesture_recognition.recognize_gesture).start()
+# Preparar una nueva imagen (ajustar el tamaño y preprocesamiento según tu modelo)
+img = Image.open('nueva_imagen.jpg')
+img = img.resize((224, 224))  # Suponiendo que el modelo espera imágenes de 224x224
+img_array = np.array(img) / 255.0  # Normalizar los valores de píxel
+img_array = np.expand_dims(img_array, axis=0)  # Agregar un eje para representar un batch
 
-# Botón para cerrar garaje
-if st.button("Cerrar Garaje"):
-    garage_control.close_garage()
+# Realizar la predicción
+prediction = model.predict(img_array)
 
-# Botón para encender luces con comando de voz
-if st.button("Encender Luces (Reconocimiento de Voz)"):
-    threading.Thread(target=voice_control.listen_for_lights_command).start()
+# Obtener la clase predicha
+class_index = np.argmax(prediction)
+classes = ['gato', 'perro']  # Lista de clases
+print('Predicción:', classes[class_index])
