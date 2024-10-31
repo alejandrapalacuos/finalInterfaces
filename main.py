@@ -6,7 +6,14 @@ pagina_actual = "inicio"
 def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
     if st.button("Empezar"):
+        st.session_state.pagina_actual = "elegir_accion"
+
+def pagina_elegir_accion():
+    st.title("Selecciona una acción")
+    if st.button("Garaje"):
         st.session_state.pagina_actual = "garaje"
+    if st.button("Luces"):
+        st.session_state.pagina_actual = "luces"
 
 def pagina_garaje():
     st.title("Control del Garaje")
