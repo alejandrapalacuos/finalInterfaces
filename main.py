@@ -10,6 +10,11 @@ body {
 """
 
 def main():
+    st.markdown(custom_css, unsafe_allow_html=True)
+
+    # Aplica la clase a todo el cuerpo
+    st.markdown('<div class="custom-background">', unsafe_allow_html=True)
+
     # Inserta el estilo CSS al principio de la aplicación
     st.markdown(custom_css, unsafe_allow_html=True)
 
@@ -26,6 +31,7 @@ def main():
         pagina_garaje()
     elif st.session_state.pagina_actual == 'luces':
         pagina_luces()
+    st.markdown('</div>', unsafe_allow_html=True)
 def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
     if st.button("Empezar"):
@@ -75,5 +81,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-import streamlit as st
 
