@@ -1,3 +1,4 @@
+pip install streamlit-icons
 import streamlit as st
 from streamlit_icons import Icons
 
