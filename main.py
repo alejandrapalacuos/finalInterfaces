@@ -5,6 +5,13 @@ custom_css = """
 <style>
 body {
     background-color: #FEFAE0 !important;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 </style>
 """
