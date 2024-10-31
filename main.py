@@ -12,16 +12,7 @@ body {
 def main():
     st.markdown(custom_css, unsafe_allow_html=True)
 
-    # Resto de tu código (páginas, botones, etc.)
-
-    # Por ejemplo:
-    st.title("Mi aplicación Streamlit")
-    st.write("Este es el contenido de mi aplicación.")
-
-if __name__ == "__main__":
-    main()
-    main()
-def pagina_inicio():
+    def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
     if st.button("Empezar"):
         st.session_state.pagina_actual = "elegir_accion"
@@ -69,4 +60,8 @@ def main():
         pagina_luces()
 
 if __name__ == "__main__":
+    main()
+
+if __name__ == "__main__":
+    main()
     main()
