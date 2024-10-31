@@ -1,17 +1,12 @@
 import streamlit as st
 
-# Define el estilo CSS con !important para mayor prioridad
+# Define el estilo CSS
 custom_css = """
 <style>
 body {
-    background-color: #FEFAE0 !important;
+    background-color: #FEFAE0;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 </style>
 """
@@ -38,8 +33,6 @@ def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
     if st.button("Empezar"):
         st.session_state.pagina_actual = "elegir_accion"
-    else:
-        st.write("Haz clic en 'Empezar' para continuar.")
 
 def pagina_elegir_accion():
     st.title("Selecciona una acción")
