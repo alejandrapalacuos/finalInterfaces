@@ -1,15 +1,11 @@
 import streamlit as st
 
-# Define el estilo CSS para el fondo
-custom_css = """
-<style>
-body {
-    background-color: #FEFAE0;  /* Cambia el color aquí */
-    margin: 0;
-    padding: 0;
-}
-</style>
-"""
+[theme]
+primaryColor='#F63366'
+backgroundColor='#FEFAE0'
+secondaryBackgroundColor='#F0F2F6'
+textColor='#262730'
+font='sans serif'
 
 def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
