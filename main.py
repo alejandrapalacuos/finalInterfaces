@@ -1,8 +1,6 @@
-pip install streamlit-icons
 import streamlit as st
-from streamlit_icons import Icons
 
-# Variables for controlling the state of the pages
+# Variables para controlar el estado de las páginas
 pagina_actual = "inicio"
 
 def pagina_inicio():
@@ -12,29 +10,29 @@ def pagina_inicio():
 
 def pagina_garaje():
     st.title("Control del Garaje")
-    if st.button(Icons.garage):  # Button with garage icon
+    if st.button("Abrir"):
         st.write("Garaje abierto")
-    if st.button(Icons.door_closed):  # Button with closed door icon
+    if st.button("Cerrar"):
         st.write("Garaje cerrado")
-    if st.button(Icons.lightbulb):  # Button with light bulb icon
+    if st.button("Ir a Luces"):
         st.session_state.pagina_actual = "luces"
 
 def pagina_luces():
     st.title("Control de Luces")
-    if st.button(Icons.lightbulb_on):  # Button with light bulb on icon
+    if st.button("Encender"):
         st.write("Luces encendidas")
-    if st.button(Icons.lightbulb_off):  # Button with light bulb off icon
+    if st.button("Apagar"):
         st.write("Luces apagadas")
-    if st.button(Icons.garage):  # Button with garage icon
+    if st.button("Volver al Garaje"):
         st.session_state.pagina_actual = "garaje"
 
-# Main function of the application
+# Función principal de la aplicación
 def main():
-    # Use st.session_state to store the current page state
+    # Utiliza st.session_state para almacenar el estado de la página actual
     if 'pagina_actual' not in st.session_state:
         st.session_state.pagina_actual = 'inicio'
 
-    # Show the corresponding page based on the state
+    # Muestra la página correspondiente según el estado
     if st.session_state.pagina_actual == 'inicio':
         pagina_inicio()
     elif st.session_state.pagina_actual == 'garaje':
