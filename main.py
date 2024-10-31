@@ -1,11 +1,5 @@
 import streamlit as st
 
-[theme]
-primaryColor='#F63366'
-backgroundColor='#FEFAE0'
-secondaryBackgroundColor='#F0F2F6'
-textColor='#262730'
-font='sans serif'
 
 def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
