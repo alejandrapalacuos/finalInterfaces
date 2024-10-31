@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Define el estilo CSS con !important para mayor prioridad y coloca al inicio
+# Define el estilo CSS con !important para mayor prioridad
 custom_css = """
 <style>
 body {
@@ -10,11 +10,6 @@ body {
 """
 
 def main():
-    st.markdown(custom_css, unsafe_allow_html=True)
-
-    # Aplica la clase a todo el cuerpo
-    st.markdown('<div class="custom-background">', unsafe_allow_html=True)
-
     # Inserta el estilo CSS al principio de la aplicación
     st.markdown(custom_css, unsafe_allow_html=True)
 
@@ -31,7 +26,7 @@ def main():
         pagina_garaje()
     elif st.session_state.pagina_actual == 'luces':
         pagina_luces()
-    st.markdown('</div>', unsafe_allow_html=True)
+
 def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
     if st.button("Empezar"):
@@ -64,21 +59,5 @@ def pagina_luces():
     if st.button("Volver"):
         st.session_state.pagina_actual = "elegir_accion"
 
-def main():
-    # Inicializa el estado de la sesión si no existe
-    if 'pagina_actual' not in st.session_state:
-        st.session_state.pagina_actual = 'inicio'
-
-    # Muestra la página correspondiente según el estado actual
-    if st.session_state.pagina_actual == 'inicio':
-        pagina_inicio()
-    elif st.session_state.pagina_actual == 'elegir_accion':
-        pagina_elegir_accion()
-    elif st.session_state.pagina_actual == 'garaje':
-        pagina_garaje()
-    elif st.session_state.pagina_actual == 'luces':
-        pagina_luces()
-
 if __name__ == "__main__":
     main()
-
