@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_icons import Icons
 
-# Variables para controlar el estado de las páginas
+# Variables for controlling the state of the pages
 pagina_actual = "inicio"
 
 def pagina_inicio():
@@ -11,29 +11,35 @@ def pagina_inicio():
 
 def pagina_garaje():
     st.title("Control del Garaje")
-    if st.button(Icons.garage):  # Botón con el icono de garaje
+    if st.button(Icons.garage):  # Button with garage icon
         st.write("Garaje abierto")
-    if st.button(Icons.door_closed):  # Botón con el icono de puerta cerrada
+    if st.button(Icons.door_closed):  # Button with closed door icon
         st.write("Garaje cerrado")
-    if st.button(Icons.lightbulb):  # Botón con el icono de bombilla
+    if st.button(Icons.lightbulb):  # Button with light bulb icon
         st.session_state.pagina_actual = "luces"
 
 def pagina_luces():
     st.title("Control de Luces")
-    if st.button(Icons.lightbulb_on):  # Botón con el icono de bombilla encendida
+    if st.button(Icons.lightbulb_on):  # Button with light bulb on icon
         st.write("Luces encendidas")
-    if st.button(Icons.lightbulb_off):  # Botón con el icono de bombilla apagada
+    if st.button(Icons.lightbulb_off):  # Button with light bulb off icon
         st.write("Luces apagadas")
-    if st.button(Icons.garage):  # Botón con el icono de garaje
+    if st.button(Icons.garage):  # Button with garage icon
         st.session_state.pagina_actual = "garaje"
 
-# Función principal de la aplicación
+# Main function of the application
 def main():
-    # Utiliza st.session_state para almacenar el estado de la página actual
+    # Use st.session_state to store the current page state
     if 'pagina_actual' not in st.session_state:
         st.session_state.pagina_actual = 'inicio'
 
-    # Muestra la página correspondiente según el estado
+    # Show the corresponding page based on the state
     if st.session_state.pagina_actual == 'inicio':
         pagina_inicio()
-    elif st.session_state.pagina_ca
+    elif st.session_state.pagina_actual == 'garaje':
+        pagina_garaje()
+    elif st.session_state.pagina_actual == 'luces':
+        pagina_luces()
+
+if __name__ == "__main__":
+    main()
