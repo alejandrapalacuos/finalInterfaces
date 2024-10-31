@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_icons import Icons
 
 # Variables para controlar el estado de las páginas
 pagina_actual = "inicio"
@@ -10,20 +11,20 @@ def pagina_inicio():
 
 def pagina_garaje():
     st.title("Control del Garaje")
-    if st.button("Abrir"):
+    if st.button(Icons.garage):  # Botón con el icono de garaje
         st.write("Garaje abierto")
-    if st.button("Cerrar"):
+    if st.button(Icons.door_closed):  # Botón con el icono de puerta cerrada
         st.write("Garaje cerrado")
-    if st.button("Ir a Luces"):
+    if st.button(Icons.lightbulb):  # Botón con el icono de bombilla
         st.session_state.pagina_actual = "luces"
 
 def pagina_luces():
     st.title("Control de Luces")
-    if st.button("Encender"):
+    if st.button(Icons.lightbulb_on):  # Botón con el icono de bombilla encendida
         st.write("Luces encendidas")
-    if st.button("Apagar"):
+    if st.button(Icons.lightbulb_off):  # Botón con el icono de bombilla apagada
         st.write("Luces apagadas")
-    if st.button("Volver al Garaje"):
+    if st.button(Icons.garage):  # Botón con el icono de garaje
         st.session_state.pagina_actual = "garaje"
 
 # Función principal de la aplicación
@@ -35,10 +36,4 @@ def main():
     # Muestra la página correspondiente según el estado
     if st.session_state.pagina_actual == 'inicio':
         pagina_inicio()
-    elif st.session_state.pagina_actual == 'garaje':
-        pagina_garaje()
-    elif st.session_state.pagina_actual == 'luces':
-        pagina_luces()
-
-if __name__ == "__main__":
-    main()
+    elif st.session_state.pagina_ca
