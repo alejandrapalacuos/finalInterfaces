@@ -6,6 +6,15 @@ body {
 }
 </style>
 """
+
+def main():
+    # Inserta el estilo CSS al principio de la aplicación
+    st.markdown(custom_css, unsafe_allow_html=True)
+
+    # Resto de tu código (páginas, botones, etc.)
+
+if __name__ == "__main__":
+    main()
 def pagina_inicio():
     st.title("Bienvenido a HomeDrive")
     if st.button("Empezar"):
