@@ -25,7 +25,7 @@ def pagina_elegir_accion():
 def pagina_garaje():
     st.title("Control del Garaje")
     if st.button("Abrir"):
-        
+       st.wite("abieryo") 
     if st.button("Cerrar"):
         st.write("Garaje cerrado")
     if st.button("Volver"):
