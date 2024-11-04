@@ -75,20 +75,3 @@ def pagina_luces():
     if st.button("Volver"):
         st.session_state.pagina_actual = "elegir_accion"
 
-def main():
-    # Inicializa el estado de la sesión si no existe
-    if 'pagina_actual' not in st.session_state:
-        st.session_state.pagina_actual = 'inicio'
-
-    # Muestra la página correspondiente según el estado actual
-    if st.session_state.pagina_actual == 'inicio':
-        pagina_inicio()
-    elif st.session_state.pagina_actual == 'elegir_accion':
-        pagina_elegir_accion()
-    elif st.session_state.pagina_actual == 'garaje':
-        pagina_garaje()
-    elif st.session_state.pagina_actual == 'luces':
-        pagina_luces()
-
-if __name__ == "__main__":
-    main()
