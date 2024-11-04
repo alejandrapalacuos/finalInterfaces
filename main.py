@@ -61,7 +61,7 @@ def pagina_garaje():
               st.header('Arriba, con Probabilidad: '+str( prediction[0][1]))
             #if prediction[0][2]>0.5:
             # st.header('Derecha, con Probabilidad: '+str( prediction[0][2]))
-        if st.button("Cerrar"):
+    if st.button("Cerrar"):
         st.write("Garaje cerrado")
     if st.button("Volver"):
         st.session_state.pagina_actual = "elegir_accion"
