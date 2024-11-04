@@ -1,4 +1,5 @@
 keras
+pip install opencv-python
 streamlit
 streamlit-webrtc
 numpy==1.26.3
