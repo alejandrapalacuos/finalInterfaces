@@ -43,9 +43,6 @@ def pagina_abrir_garaje():
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
     st.title("Reconocimiento de Imágenes")
-    #st.write("Versión de Python:", platform.python_version())
-    with st.sidebar:
-        st.subheader("Usando un modelo entrenado en teachable Machine puedes Usarlo en esta app para identificar")
     img_file_buffer = st.camera_input("Toma una Foto")
 
     if img_file_buffer is not None:
