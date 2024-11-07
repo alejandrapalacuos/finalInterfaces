@@ -21,8 +21,7 @@ def pagina_garaje():
     st.title("Control del Garaje")
     if st.button("Abrir"):
         st.write("abieryo") 
-    if st.button("Cerrar"):
-        st.write("Garaje cerrado")
+    if st.link_button("Cerrar", "https://garajeboton.streamlit.app/")   
     if st.button("Volver"):
         st.session_state.pagina_actual = "elegir_accion"
 
