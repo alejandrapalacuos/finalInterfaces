@@ -29,8 +29,8 @@ def pagina_luces():
     st.title("Control de Luces")
     if st.button("Encender"):
         st.write("Luces encendidas")
-    if st.button("Apagar"):
-        st.write("Luces apagadas")
+    st.link_button("Volver a inicio", "https://lucesboton.streamlit.app/")
+    
     if st.button("Volver"):
         st.session_state.pagina_actual = "elegir_accion"
         
