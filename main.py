@@ -22,7 +22,7 @@ def pagina_garaje():
     st.title("Control del Garaje")
     st.link_button("Abrir", "https://abrirgaraje.streamlit.app/") 
         if st.button("Volver"):
-        st.session_state.pagina_actual = "elegir_accion"
+            st.session_state.pagina_actual = "elegir_accion"
 
 def pagina_luces():
     st.title("Control de Luces")
