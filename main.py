@@ -20,15 +20,14 @@ def pagina_elegir_accion():
 
 def pagina_garaje():
     st.title("Control del Garaje")
-    st.link_button("Abrir", "https://garajeboton.streamlit.app/") 
+    st.link_button("Abrir", "https://abrirgaraje.streamlit.app/") 
     st.link_button("Cerrar", "https://garajeboton.streamlit.app/")  
     if st.button("Volver"):
         st.session_state.pagina_actual = "elegir_accion"
 
 def pagina_luces():
     st.title("Control de Luces")
-    if st.button("Encender"):
-        st.write("Luces encendidas")
+    st.link_button("Apagar luces", "https://contolvoz-8rmjmhldtnyfzartcqykwy.streamlit.app/")
     st.link_button("Apagar luces", "https://lucesboton.streamlit.app/")
     
     if st.button("Volver"):
