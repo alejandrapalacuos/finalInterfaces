@@ -27,7 +27,7 @@ def pagina_garaje():
 
 def pagina_luces():
     st.title("Control de Luces")
-    st.link_button("Apagar luces", "https://contolvoz-8rmjmhldtnyfzartcqykwy.streamlit.app/")
+    st.link_button("Encender luces", "https://contolvoz-8rmjmhldtnyfzartcqykwy.streamlit.app/")
     st.link_button("Apagar luces", "https://lucesboton.streamlit.app/")
     
     if st.button("Volver"):
