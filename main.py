@@ -4,7 +4,6 @@ from PIL import Image
 
 
 def pagina_inicio():
-    st.title("Bienvenido a HomeDrive")
     image = Image.open('homedrive.png')
     st.image(image, width=350)
     if st.button("Empezar"):
